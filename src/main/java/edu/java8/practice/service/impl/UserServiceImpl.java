@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
         return users.stream()
                 .mapToDouble(u -> u.getAge())
                 .average()
-                .getAsDouble();
+                .orElse(-1);
     }
 
     @Override
